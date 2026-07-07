@@ -28,7 +28,9 @@ def apply_discount(price:float,discount_tier:str) -> float:
 # agent loop
 @traceable(name="Langchain_Agent_Loop")
 def run_agent(question:str):
-    pass
+    tools=[get_product_price,apply_discount]
+    tools_dict={t.name:t for t in tools}
+    
 
 
 if __name__ == "__main__":
